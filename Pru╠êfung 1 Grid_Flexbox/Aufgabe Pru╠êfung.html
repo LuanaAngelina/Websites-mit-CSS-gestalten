@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Webdesign-Grundlagen: HTML, CSS - Elemente mit Flexbox und Grid positionieren</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <style>    
+    /*
+    Aufgabe:
+    Verwenden Sie sowohl CSS Flexbox als auch CSS Grid, um das Layout der Webseite zu gestalten. 
+    Die Aufgabe besteht darin, die .webdesignGrundlagen div als Flexbox zu gestalten, um die .grundlagenBox divs horizontal auszurichten. 
+    Innerhalb jeder .grundlagenBox div verwenden Sie CSS Grid, um das Layout für den Text und das Bild zu erstellen.
+    */
+
+
+    /* Zentriert die Überschrift und den Text auf der Seite (1Punkt) */
+    h1, p {
+        text-align: center;
+    }
+
+    /* Flexbox-Container für die grundlagenBox-Elemente (1Punkt) */
+    .webdesignGrundlagen {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    /* Grid-Container für jede einzelne Grundlagen-Box (1Punkt) */
+    .grundlagenBox {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: 10px;
+        border: 1px solid black;
+        padding: 20px;
+        margin: 30px;
+        background-color: lightgray;
+        flex: 1 1 300px;
+    }
+
+    /* Entfernt den Standardabstand des h2-Tags innerhalb der grundlagenBox (0.5 Punkte) */
+    .grundlagenBox h2 {
+        margin: 0;
+    }
+
+    /* Stellt sicher, dass die Bilder innerhalb der grundlagenBox die volle Breite nutzen (0.5 Punkte) */
+    .grundlagenBox img {
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    /* Media Query für kleinere Bildschirme kleiner als 600px soll untereinander angezeigt werden */
+    @media (max-width: 600px) {
+        .webdesignGrundlagen {
+            flex-direction: column;
+        }
+    }
+    
+    </style>
+</head>
+<body>
+    <h1>Grundlagen der Webseitenerstellung</h1>
+    <p><em>Übung zu den Grundlagen von CSS Flexbox und CSS Grid.</em></p>
+    <p>Um eine moderne Webseite zu erstellen, sollten Sie folgende Grundkenntnisse und Tools beherrschen:</p>
+
+    <div class="webdesignGrundlagen">
+        <div class="grundlagenBox">
+            <h2>Texteditor</h2>
+            <p>Für die Erstellung von HTML- und CSS-Code benötigen Sie einen guten Texteditor. Beliebte Optionen sind VSCode, Sublime Text oder Atom.</p>
+            <img src="bilder/Texteditor1.png" alt="Texteditor">
+        </div>
+        <div class="grundlagenBox">
+            <h2>Grundverständnis von HTML und CSS</h2>
+            <p>Ein solides Verständnis von HTML und CSS ist unerlässlich, um effektiv Webseiten zu gestalten.</p>
+            <img src="bilder/Grund1.png" alt="HTML und CSS">
+        </div>
+        <div class="grundlagenBox">
+            <h2>Responsive Design</h2>
+            <p>Responsive Webdesign stellt sicher, dass Ihre Webseite auf verschiedenen Geräten gut aussieht und funktioniert.</p>
+            <img src="bilder/responsive1.png" alt="Responsive Design">
+        </div>
+        <div class="grundlagenBox">
+            <h2>Browser-Tools</h2>
+            <p>Die Entwicklertools der Browser sind unverzichtbar für das Debugging und Testen von Webseiten.</p>
+            <img src="bilder/BrowserTool1.png" alt="Browser-Tools">
+        </div>
+    </div>
+</body>
+</html>
